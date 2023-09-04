@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+    {% block content %}
+     
+    <!-- <h2 class="text-center">It's Home Page</h2> -->
+    <div class="container-fluid" style="background-image: url('{% static 'images/background3.jpg' %}'); background-repeat:no-repeat; width:100%; height:600px; background-size:100%" >
+        <!-- first row............. -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-white mt-3 mb-4">ABOUT SVCE</h2>
+            </div>
+
+         <!-- second row........... -->
+        <div class="row">
+            <div class="col-md-6 ml-4 mr-4" >
+                <div style="background-image: url('{% static 'images/thirdback.jpg' %}'); background-repeat:no-repeat; width:100%; height:150px; background-size:100%; border-radius: 10px;">
+                <!-- <div style="background-color: burlywood; width: 400px; height: 300px; margin:10px; padding: 10px; display: inline-block;"> -->
+                
+                    <h6 class="text-white ml-3 mr-3">Sri Venkateswara College of Engineering (SVCE) is a private engineering college established in the year 2007, at Tirupati, Andhra Pradesh. 
+                        The college is affiliated to Jawaharlal Nehru Technological University and is approved by AICTE. 
+                        It offers UG & PG courses in the field of Engineering, Management & Computer Applications. 
+                        The college has state-of-the-art infrastructure and qualified faculties to deliver high-quality technical education.</h6>
+
+                </div>
+                
+                <div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h2 class="text-center text-dark bg-white mt-3 ml-5 mr-5" style="border-radius: 10px; ">Admissions Started</h2>
+                        <center>
+                            <input type="submit" value="Sign-in" class="btn btn-warning form-control mt-3 font-weight-bold">
+                            <input type="submit" value="Register" class="btn btn-dark form-control mt-3 font-weight-bold">
+                        </center>
+                        
+                    </form>
+                    
+                </div>
+                <div class="mt-5 text-center ">
+                    <h4 class="font-weight-bold ">BTECH  | MCA | MBA | MTECH</B></h4>
+                </div>
+                <!-- <div>
+                    <img src="{% static 'images/svcetextlogo.jpg' %}">
+                </div> -->
+                <div class="text-center mt-3">
+                    <h6 class="text=center font-weight-bold "><span class="text-danger"> Address :</span> Sri venkateswara College of Engineering,
+                        Karakambadi Road,Tirupathi,Andhra Pradesh,
+                        India.</h6>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-5 ml-4" >
+                <img src="{% static 'images/homeimage2.jpg' %}" style="width:95%; height: 90%; border-radius: 10px;">
+            </div>
+        </div>
+            
+        </div>
+    </div>
+
+    <!-- <div class="comtainer-fluid"> 
+       <div class="row">
+        
+            <div class="col-md-3 mr-3 ml-3" style="box-shadow: 0px 0px 10px black; width: 100%; height: 300px; ">
+                <h2 class=""> WIPRO</h2>
+            </div>
+        
+            <div class=" col-md-3 ml-3 mr-3" style="box-shadow: 0px 0px 10px black; width: 100%; height: 300px; ">
+                    
+            </div>
+        
+            <div class="col-md-3 ml-3 mr-3" style="box-shadow: 0px 0px 10px black; width: 100%; height: 300px;">
+
+            </div>
+        </div>
+    </div> -->
+    {% endblock %}
+    
+</body>
+</html>

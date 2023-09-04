@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">All Branches</h2>
+                {% if branches %}
+                <table class="table table-bordered">
+                    <thead class="text-center text-white bg-primary">
+                        <tr>
+                            <th>Branch</th>
+                            <th>Fee</th>
+                            <th>Duration</th>
+                            <th>Start Year</th>
+                            <th>Passed out Year</th>
+                            <th>Type of college</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    {% for i in branches %}
+                    <tbody class="text-center bg-dark text-white">
+                        <tr>
+                            <td>{{i.branch_name}}</td>
+                            <td>{{i.fee}}</td>
+                            <td>{{i.duration}}</td>
+                            <td>{{i.start_year}}</td>
+                            <td>{{i.passedout_year}}</td>
+                            <td>{{i.typeof_college}}</td>
+                            <td>{{i.location}}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+                {% else %}
+                   <h3 class="text-center">Presently This College is Closed</h3>
+            
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
